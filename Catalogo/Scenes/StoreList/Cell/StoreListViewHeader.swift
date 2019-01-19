@@ -29,7 +29,7 @@ class StoreListViewHeader: UIView {
         addSubview(title)
         title.text = text
         
-        self.backgroundColor = UIColor.init(red: 217.0/255.0, green: 217.0/255.0, blue: 217.0/255.0, alpha: 1.0)
+        self.backgroundColor = UIColor.init(red: 60.0/255.0, green: 179.0/255.0, blue: 113.0/255.0, alpha: 1.0)
         
         title.translatesAutoresizingMaskIntoConstraints = false
         
