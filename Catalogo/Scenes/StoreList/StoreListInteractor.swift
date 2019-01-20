@@ -17,6 +17,7 @@ protocol StoreListDataStore
 {
     var fetchedStores: [Store] { get set }
     var selectedStore: Store? { get set }
+    var selectedStoreId: Int? { get set }
 }
 
 class StoreListInteractor: StoreListBusinessLogic, StoreListDataStore
@@ -25,6 +26,7 @@ class StoreListInteractor: StoreListBusinessLogic, StoreListDataStore
     var worker: StoreListWorker?
     var fetchedStores: [Store] = []
     var selectedStore: Store?
+    var selectedStoreId: Int?
     
     // MARK: Methods
     

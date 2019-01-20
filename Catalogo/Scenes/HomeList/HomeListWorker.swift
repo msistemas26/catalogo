@@ -10,12 +10,14 @@ import UIKit
 
 class HomeListWorker
 {
-    func fetchProducts(completionHandler completion: @escaping ([Product]) -> Void)
+    let theCatalogApi = TheCatalogApi()
+    
+    func fetchProducts(storeId: Int?, completionHandler completion: @escaping ([Product]) -> Void)
     {
-        var fetchedProducts:[Product] = []
-        for index in 1...50 {
-            fetchedProducts.append(Product(description: "Demo \(index)"))
+        if let storeId = storeId {
+            theCatalogApi.fetchProducts(storeId: storeId){ (stores) in
+                completion(stores)
+            }
         }
-        completion(fetchedProducts)
     }
 }

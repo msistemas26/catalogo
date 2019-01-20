@@ -18,5 +18,5 @@ struct Store: Codable
 
 struct StoreView: Codable {
     let name: String?
-    let storeId: String?
+    let storeId: Int?
 }

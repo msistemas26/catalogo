@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class HomeListCell: UICollectionViewCell {
     
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var price: UILabel!
     
     var displayedProduct: HomeList.FetchProducts.ViewModel.DisplayedProduct!
     
@@ -21,10 +24,26 @@ class HomeListCell: UICollectionViewCell {
     }
     
     private func showData() {
-        title.text = displayedProduct.description
+        name.text = displayedProduct.name
+        if let finalPrice = displayedProduct.finalPrice {
+            price.text = String(finalPrice)
+        }
+        
+        let placeholderImage = UIImage(named: "defaultImage")!
+        
+        guard let imageUrl = displayedProduct.image, let url = URL(string: imageUrl) else {
+            image.image = placeholderImage
+            return
+        }
+        
+        let imageFilter = AspectScaledToFillSizeFilter(size: image.frame.size)
+        
+        image.af_setImage(withURL: url, placeholderImage: placeholderImage, filter: imageFilter, progress: nil, imageTransition: .noTransition, runImageTransitionIfCached: false, completion: { (image) in
+        })
     }
     
     private func setThemes() {
-        title.textColor = UIColor.black
+        name.textColor = UIColor.black
+        price.textColor = UIColor.black
     }
 }

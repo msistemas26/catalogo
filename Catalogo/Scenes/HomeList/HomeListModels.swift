@@ -24,7 +24,9 @@ enum HomeList
         {
             struct DisplayedProduct
             {
-                var description: String?
+                var name: String?
+                let image: String?
+                let finalPrice: Int?
             }
             var displayedProducts: [DisplayedProduct]
         }

@@ -30,8 +30,12 @@ class StoreListRouter: NSObject, StoreListRoutingLogic, StoreListDataPassing
         
         if let alertMessage = StoreViewListViewController.fromXib(), let selectedStore = dataStore?.fetchedStores[withStoreIndex] {
             dataStore?.selectedStore = selectedStore
-            alertMessage.setupData(withLanguajes: selectedStore.storeViews) { (store) in
+            alertMessage.setupData(withLanguajes: selectedStore.storeViews) { (storeId) in
+                
                 alertMessage.dismiss(animated: true, completion: nil)
+                
+                self.dataStore?.selectedStoreId = storeId.storeId
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let destinationVC = storyboard.instantiateViewController(withIdentifier: "HomeListViewController") as! HomeListViewController
                 var destinationDS = destinationVC.router!.dataStore!
@@ -53,6 +57,6 @@ class StoreListRouter: NSObject, StoreListRoutingLogic, StoreListDataPassing
     
     func passDataToConversation(source: StoreListDataStore, destination: inout HomeListDataStore)
     {
-        //destination.value = ""
+        destination.storeId = source.selectedStoreId
     }
 }

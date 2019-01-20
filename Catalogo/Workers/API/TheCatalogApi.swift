@@ -14,14 +14,11 @@ public enum Result<T> {
     case failure(Error)
 }
 
-struct Contants
-{
-    static let home_path = "http://private-anon-14d5203e40-gocco.apiary-mock.com"
-}
-
 enum CatalogPath
 {
+    static let home_path = "http://private-anon-14d5203e40-gocco.apiary-mock.com"
     static let store = "/stores"
+    static let products = "/stores/store_id/products/search?"
 }
 
 final class TheCatalogApi
@@ -34,8 +31,8 @@ final class TheCatalogApi
     
     func fetchStores(completionHandler completion: @escaping ([Store]) -> Void)
     {
-        let urlString = Contants.home_path + CatalogPath.store
-        print(urlString)
+        let urlString = CatalogPath.home_path + CatalogPath.store
+        
         Alamofire
             .request(urlString, method: .get)
             .responseJSON { response in
@@ -51,7 +48,7 @@ final class TheCatalogApi
                         let websiteCode = store["websiteCode"] as? String
                         var storeViews: [StoreView] = []
                         for storeView in store["storeViews"] as! [[String: Any]] {
-                            storeViews.append(StoreView(name: storeView["name"] as? String, storeId: storeView["storeId"] as? String))
+                            storeViews.append(StoreView(name: storeView["name"] as? String, storeId: storeView["storeId"] as? Int))
                         }
                         stores.append(Store(name: name, countryCode: countryCode, websiteCode: websiteCode, storeViews: storeViews))
                     }
@@ -62,4 +59,24 @@ final class TheCatalogApi
         }
     }
     
+    func fetchProducts(storeId: Int, completionHandler completion: @escaping ([Product]) -> Void)
+    {
+        let productsPath = CatalogPath.products.replacingOccurrences(of: "store_id", with: String(storeId))
+        let urlString = CatalogPath.home_path + productsPath
+        Alamofire
+            .request(urlString, method: .get)
+            .responseJSON { response in
+                guard let result = response.data else {
+                    completion([])
+                    return
+                }
+                
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                
+                var products: ProductsResult
+                products = try! decoder.decode(ProductsResult.self, from: result)
+                completion(products.results)
+        }
+    }
 }

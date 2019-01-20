@@ -7,7 +7,9 @@ target 'Catalogo' do
 
   # Pods for Catalogo
   pod 'Alamofire', '~> 4.7'
+  pod 'AlamofireImage', '~> 3.3'
   #pod 'Realm', '~> 3.13'
+
 
   target 'CatalogoTests' do
     inherit! :search_paths

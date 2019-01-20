@@ -10,13 +10,13 @@ import Foundation
 
 struct Product: Codable
 {
-    let description: String?
-    /*let modelId: String?
+    let modelId: String?
     let name: String?
     let type: String?
     let sku: String?
     let url: String?
     let color: String?
+    let description: String?
     let composition: String?
     let care: String?
     let originalPrice: Int?
@@ -25,11 +25,6 @@ struct Product: Codable
     let currency: String?
     let images: [String]?
     let sizes: [Size]
- */
-}
-
-struct ProductsList: Codable {
-    let results: [Product]
 }
 
 struct Size: Codable {
@@ -38,3 +33,8 @@ struct Size: Codable {
     let stockQty: Int?
     
 }
+
+struct ProductsResult: Codable {
+    let results: [Product]
+}
+

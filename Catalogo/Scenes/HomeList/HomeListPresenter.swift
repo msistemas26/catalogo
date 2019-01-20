@@ -24,7 +24,7 @@ class HomeListPresenter: HomeListPresentationLogic
      	var fetchedProducts: [HomeList.FetchProducts.ViewModel.DisplayedProduct] = []
         for fetchedProduct in response.fetchedProducts
         {
-            let displayedProducts = HomeList.FetchProducts.ViewModel.DisplayedProduct(description: fetchedProduct.description)
+            let displayedProducts = HomeList.FetchProducts.ViewModel.DisplayedProduct(name: fetchedProduct.name, image: fetchedProduct.images?.first, finalPrice: fetchedProduct.finalPrice)
             
             fetchedProducts.append(displayedProducts)
         }
