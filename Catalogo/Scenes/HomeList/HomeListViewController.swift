@@ -85,6 +85,10 @@ class HomeListViewController: UIViewController, HomeListDisplayLogic
         displayedProducts = viewModel.displayedProducts
         collectionView.reloadData()
     }
+    
+    @IBAction func didTapCategoryButton(_ sender: UIButton) {
+        router?.routeToCategories()
+    }
 }
 
 

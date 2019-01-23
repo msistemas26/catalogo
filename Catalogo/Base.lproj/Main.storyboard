@@ -52,6 +52,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eRp-BE-Rcu">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yYw-qu-278">
+                            <rect key="frame" x="147.5" y="7" width="80" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Category ▼">
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </state>
+                            <connections>
+                                <action selector="didTapCategoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="buo-AN-cRq"/>
+                            </connections>
+                        </button>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="pZQ-JW-dYZ" id="d3l-2S-a4K"/>
                     </connections>
@@ -59,6 +72,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1551" y="87"/>
+        </scene>
+        <!--Category List View Controller-->
+        <scene sceneID="FUs-jI-6qX">
+            <objects>
+                <viewController storyboardIdentifier="CategoryListViewController" id="iz7-01-6hi" customClass="CategoryListViewController" customModule="Catalogo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="f3l-Fl-o5R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nF6-aT-IAS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Categories" id="lU2-Jd-TUS">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="jwq-Hl-bxU">
+                                            <connections>
+                                                <action selector="closeCategoryButton:" destination="iz7-01-6hi" id="U3A-5r-aHa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Caw-Ue-gZi">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="iz7-01-6hi" id="y2G-19-66M"/>
+                                    <outlet property="delegate" destination="iz7-01-6hi" id="Opb-Cs-EwA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="HsL-hV-ilb" firstAttribute="bottom" secondItem="Caw-Ue-gZi" secondAttribute="bottom" id="2Ot-gH-Njk"/>
+                            <constraint firstItem="nF6-aT-IAS" firstAttribute="leading" secondItem="HsL-hV-ilb" secondAttribute="leading" id="M3m-l3-W9N"/>
+                            <constraint firstItem="Caw-Ue-gZi" firstAttribute="leading" secondItem="HsL-hV-ilb" secondAttribute="leading" id="MmY-9O-RHY"/>
+                            <constraint firstItem="HsL-hV-ilb" firstAttribute="trailing" secondItem="nF6-aT-IAS" secondAttribute="trailing" id="UY2-XP-yw5"/>
+                            <constraint firstItem="Caw-Ue-gZi" firstAttribute="top" secondItem="nF6-aT-IAS" secondAttribute="bottom" id="c9y-Kd-5vY"/>
+                            <constraint firstItem="HsL-hV-ilb" firstAttribute="trailing" secondItem="Caw-Ue-gZi" secondAttribute="trailing" id="iPJ-W9-nI3"/>
+                            <constraint firstItem="HsL-hV-ilb" firstAttribute="top" secondItem="nF6-aT-IAS" secondAttribute="top" id="yIM-Jj-wKl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HsL-hV-ilb"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Caw-Ue-gZi" id="rcF-kN-Uwc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOO-AJ-ZPy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2353" y="87"/>
         </scene>
         <!--Store List View Controller-->
         <scene sceneID="7P8-jv-dnG">

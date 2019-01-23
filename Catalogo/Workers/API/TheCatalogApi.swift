@@ -19,6 +19,7 @@ enum CatalogPath
     static let home_path = "http://private-anon-14d5203e40-gocco.apiary-mock.com"
     static let store = "/stores"
     static let products = "/stores/store_id/products/search?"
+    static let categories = "/stores/store_id/categories"
 }
 
 final class TheCatalogApi
@@ -77,6 +78,36 @@ final class TheCatalogApi
                 var products: ProductsResult
                 products = try! decoder.decode(ProductsResult.self, from: result)
                 completion(products.results)
+        }
+    }
+    
+    func fetchCategories(storeId: Int,completionHandler completion: @escaping ([Category]) -> Void)
+    {
+        let categoriesPath = CatalogPath.categories.replacingOccurrences(of: "store_id", with: String(storeId))
+        let urlString = CatalogPath.home_path + categoriesPath
+        print(urlString)
+        Alamofire
+            .request(urlString, method: .get)
+            .responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    guard let jsonArray = value as? [[String: Any]] else {
+                        return
+                    }
+                    var categories: [Category] = []
+                    for categoryDict in jsonArray {
+                        let categoryId = categoryDict["categoryId"] as? String
+                        let name = categoryDict["name"] as? String
+                        var children: [Category] = []
+                        for child in categoryDict["children"] as! [[String: Any]] {
+                            children.append(Category(categoryId: child["name"] as? String, name: child["name"] as? String,children: []))
+                        }
+                        categories.append(Category(categoryId: categoryId,name: name ,children: children))
+                    }
+                    completion(categories)
+                case .failure(let error):
+                    completion([])
+                }
         }
     }
 }

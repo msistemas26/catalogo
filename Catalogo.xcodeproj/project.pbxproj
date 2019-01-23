@@ -40,6 +40,17 @@
 		9A7A9B3E21F38F0E00ED6EBA /* StoreViewLIstCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A9B3521F38F0E00ED6EBA /* StoreViewLIstCell.xib */; };
 		9A7A9B4221F38F7700ED6EBA /* StoreViewListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4021F38F7700ED6EBA /* StoreViewListViewController.swift */; };
 		9A7A9B4321F38F7700ED6EBA /* StoreViewListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4121F38F7700ED6EBA /* StoreViewListViewController.xib */; };
+		9A7A9B4721F89F7C00ED6EBA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4621F89F7C00ED6EBA /* Category.swift */; };
+		9A7A9B5221F8A1C600ED6EBA /* CategoryListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4921F8A1C600ED6EBA /* CategoryListViewHeader.swift */; };
+		9A7A9B5321F8A1C600ED6EBA /* CategoryListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4A21F8A1C600ED6EBA /* CategoryListPresenter.swift */; };
+		9A7A9B5421F8A1C600ED6EBA /* CategoryListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4B21F8A1C600ED6EBA /* CategoryListWorker.swift */; };
+		9A7A9B5521F8A1C600ED6EBA /* CategoryListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4C21F8A1C600ED6EBA /* CategoryListRouter.swift */; };
+		9A7A9B5621F8A1C600ED6EBA /* CategoryListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4D21F8A1C600ED6EBA /* CategoryListModels.swift */; };
+		9A7A9B5721F8A1C600ED6EBA /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4E21F8A1C600ED6EBA /* CategoryListViewController.swift */; };
+		9A7A9B5821F8A1C600ED6EBA /* CategoryListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B4F21F8A1C600ED6EBA /* CategoryListInteractor.swift */; };
+		9A7A9B5921F8A1C600ED6EBA /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B5021F8A1C600ED6EBA /* CategoryListCell.swift */; };
+		9A7A9B5A21F8A1C600ED6EBA /* CategoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A9B5121F8A1C600ED6EBA /* CategoryListCell.xib */; };
+		9A7A9B5F21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B5E21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +116,17 @@
 		9A7A9B3521F38F0E00ED6EBA /* StoreViewLIstCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreViewLIstCell.xib; sourceTree = "<group>"; };
 		9A7A9B4021F38F7700ED6EBA /* StoreViewListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoreViewListViewController.swift; path = Catalogo/Scenes/Modal/StoreViewListViewController.swift; sourceTree = SOURCE_ROOT; };
 		9A7A9B4121F38F7700ED6EBA /* StoreViewListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreViewListViewController.xib; path = Catalogo/Scenes/Modal/StoreViewListViewController.xib; sourceTree = SOURCE_ROOT; };
+		9A7A9B4621F89F7C00ED6EBA /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		9A7A9B4921F8A1C600ED6EBA /* CategoryListViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewHeader.swift; sourceTree = "<group>"; };
+		9A7A9B4A21F8A1C600ED6EBA /* CategoryListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListPresenter.swift; sourceTree = "<group>"; };
+		9A7A9B4B21F8A1C600ED6EBA /* CategoryListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListWorker.swift; sourceTree = "<group>"; };
+		9A7A9B4C21F8A1C600ED6EBA /* CategoryListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListRouter.swift; sourceTree = "<group>"; };
+		9A7A9B4D21F8A1C600ED6EBA /* CategoryListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListModels.swift; sourceTree = "<group>"; };
+		9A7A9B4E21F8A1C600ED6EBA /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
+		9A7A9B4F21F8A1C600ED6EBA /* CategoryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListInteractor.swift; sourceTree = "<group>"; };
+		9A7A9B5021F8A1C600ED6EBA /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
+		9A7A9B5121F8A1C600ED6EBA /* CategoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListCell.xib; sourceTree = "<group>"; };
+		9A7A9B5E21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeUpToBottomTransitionAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +205,7 @@
 		9A0A004C21F371E200D8DEDD /* Catalogo */ = {
 			isa = PBXGroup;
 			children = (
+				9A7A9B5C21F8A44D00ED6EBA /* Util */,
 				9A0A008E21F3755300D8DEDD /* Workers */,
 				9A0A008F21F3756200D8DEDD /* Models */,
 				9A0A007B21F373AA00D8DEDD /* Scenes */,
@@ -216,6 +239,7 @@
 		9A0A007B21F373AA00D8DEDD /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				9A7A9B4821F8A1A500ED6EBA /* CategoryList */,
 				9A7A9B2C21F38EE500ED6EBA /* StoreViewList */,
 				9A0A00A421F377B500D8DEDD /* StoreList */,
 				9A0A007C21F373B300D8DEDD /* HomeList */,
@@ -258,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				9A0A009021F3757F00D8DEDD /* Product.swift */,
+				9A7A9B4621F89F7C00ED6EBA /* Category.swift */,
 				9A0A00A621F377D400D8DEDD /* Store.swift */,
 			);
 			path = Models;
@@ -312,6 +337,46 @@
 				9A7A9B3521F38F0E00ED6EBA /* StoreViewLIstCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		9A7A9B4821F8A1A500ED6EBA /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A9B5B21F8A1D200ED6EBA /* Cell */,
+				9A7A9B4A21F8A1C600ED6EBA /* CategoryListPresenter.swift */,
+				9A7A9B4B21F8A1C600ED6EBA /* CategoryListWorker.swift */,
+				9A7A9B4C21F8A1C600ED6EBA /* CategoryListRouter.swift */,
+				9A7A9B4D21F8A1C600ED6EBA /* CategoryListModels.swift */,
+				9A7A9B4E21F8A1C600ED6EBA /* CategoryListViewController.swift */,
+				9A7A9B4F21F8A1C600ED6EBA /* CategoryListInteractor.swift */,
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
+		9A7A9B5B21F8A1D200ED6EBA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A9B5021F8A1C600ED6EBA /* CategoryListCell.swift */,
+				9A7A9B5121F8A1C600ED6EBA /* CategoryListCell.xib */,
+				9A7A9B4921F8A1C600ED6EBA /* CategoryListViewHeader.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		9A7A9B5C21F8A44D00ED6EBA /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A9B5D21F8A45400ED6EBA /* Transition */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		9A7A9B5D21F8A45400ED6EBA /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A9B5E21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +494,7 @@
 				9A0A008C21F373F500D8DEDD /* HomeListCell.xib in Resources */,
 				9A7A9B4321F38F7700ED6EBA /* StoreViewListViewController.xib in Resources */,
 				9A0A005321F371E200D8DEDD /* Main.storyboard in Resources */,
+				9A7A9B5A21F8A1C600ED6EBA /* CategoryListCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,11 +599,19 @@
 				9A0A008521F373F500D8DEDD /* HomeListPresenter.swift in Sources */,
 				9A0A00A021F377AF00D8DEDD /* StoreListViewController.swift in Sources */,
 				9A0A008721F373F500D8DEDD /* HomeListRouter.swift in Sources */,
+				9A7A9B5621F8A1C600ED6EBA /* CategoryListModels.swift in Sources */,
 				9A0A00BB21F37DFE00D8DEDD /* TheCatalogApi.swift in Sources */,
+				9A7A9B5821F8A1C600ED6EBA /* CategoryListInteractor.swift in Sources */,
 				9A0A00A721F377D400D8DEDD /* Store.swift in Sources */,
 				9A0A009C21F377AF00D8DEDD /* StoreListPresenter.swift in Sources */,
 				9A0A009D21F377AF00D8DEDD /* StoreListWorker.swift in Sources */,
+				9A7A9B5921F8A1C600ED6EBA /* CategoryListCell.swift in Sources */,
+				9A7A9B5721F8A1C600ED6EBA /* CategoryListViewController.swift in Sources */,
+				9A7A9B5F21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift in Sources */,
 				9A7A9B3D21F38F0E00ED6EBA /* StoreViewLIstCell.swift in Sources */,
+				9A7A9B5521F8A1C600ED6EBA /* CategoryListRouter.swift in Sources */,
+				9A7A9B5321F8A1C600ED6EBA /* CategoryListPresenter.swift in Sources */,
+				9A7A9B5421F8A1C600ED6EBA /* CategoryListWorker.swift in Sources */,
 				9A0A009121F3757F00D8DEDD /* Product.swift in Sources */,
 				9A0A009F21F377AF00D8DEDD /* StoreListModels.swift in Sources */,
 				9A0A009B21F377AF00D8DEDD /* StoreListViewHeader.swift in Sources */,
@@ -545,12 +619,14 @@
 				9A0A008B21F373F500D8DEDD /* HomeListCell.swift in Sources */,
 				9A0A008921F373F500D8DEDD /* HomeListViewController.swift in Sources */,
 				9A0A00A221F377AF00D8DEDD /* StoreListCell.swift in Sources */,
+				9A7A9B5221F8A1C600ED6EBA /* CategoryListViewHeader.swift in Sources */,
 				9A0A008A21F373F500D8DEDD /* HomeListInteractor.swift in Sources */,
 				9A0A009E21F377AF00D8DEDD /* StoreListRouter.swift in Sources */,
 				9A0A008821F373F500D8DEDD /* HomeListModels.swift in Sources */,
 				9A0A008621F373F500D8DEDD /* HomeListWorker.swift in Sources */,
 				9A7A9B4221F38F7700ED6EBA /* StoreViewListViewController.swift in Sources */,
 				9A0A004E21F371E200D8DEDD /* AppDelegate.swift in Sources */,
+				9A7A9B4721F89F7C00ED6EBA /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

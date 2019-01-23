@@ -10,7 +10,7 @@ import UIKit
 
 protocol HomeListRoutingLogic
 {
-    func showSelectedProduct(withProductIndex: Int)
+    func routeToCategories()
 }
 
 protocol HomeListDataPassing
@@ -25,30 +25,32 @@ class HomeListRouter: NSObject, HomeListRoutingLogic, HomeListDataPassing
     
     // MARK: Routing
     
-    func showSelectedProduct(withProductIndex: Int)
+    func routeToCategories()
     {
-        /*
+        //USING PROGRAMATICALLY PRESENTATION
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "CategoryListViewController") as! CategoryListViewController
+        
         var destinationDS = destinationVC.router!.dataStore!
-        passDataToConversation(source: dataStore!, destination: &destinationDS)
-        navigateToConversation(source: viewController!, destination: destinationVC)
-         */
+        self.passDataToCategory(source: self.dataStore!, destination: &destinationDS)
+        self.navigateToCategory(source: self.viewController!, destination: destinationVC)
+        
     }
     
-    /*
     // MARK: Navigation
     
-    func navigateToConversation(source: HomeListViewController, destination: ViewController)
+    func navigateToCategory(source: HomeListViewController, destination: CategoryListViewController)
     {
-        source.show(destination, sender: nil)
+        destination.transitioningDelegate = destination
+        source.modalPresentationStyle = .custom
+        source.present(destination, animated: true)
     }
     
     // MARK: Passing data
     
-    func passDataToConversation(source: HomeListDataStore, destination: inout DataStore)
+    func passDataToCategory(source: HomeListDataStore, destination: inout CategoryListDataStore)
     {
-        destination.value = ""
+        destination.storeId = source.storeId
     }
-    */
 }
