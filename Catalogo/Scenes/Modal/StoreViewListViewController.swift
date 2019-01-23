@@ -36,8 +36,12 @@ class StoreViewListViewController: UIViewController {
     func setupData(withLanguajes data:[StoreView], completion: @escaping (StoreView) -> Void){
         self.completion = completion
         self.storeViews = data
+        
+        // Text Should go in a String File.
         alertTitle.text = "StoreView"
         dismissButton.setTitle("DISMISS", for: .normal)
+        
+        // This should go in a Palete file.
         dismissButton.backgroundColor = UIColor(red: 60/255, green: 179/255, blue: 113/255, alpha: 1.0)
         backViewShadow()
         dismissButtonShadow()
