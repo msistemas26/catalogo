@@ -32,6 +32,12 @@ class HomeListRouter: NSObject, HomeListRoutingLogic, HomeListDataPassing
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destinationVC = storyboard.instantiateViewController(withIdentifier: "CategoryListViewController") as! CategoryListViewController
         
+        destinationVC.selectedCategory { (categoryId) in
+            destinationVC.dismiss(animated: true, completion: nil)
+            self.dataStore?.categoryId = categoryId
+            self.viewController?.fetchProducts()
+        }
+        
         var destinationDS = destinationVC.router!.dataStore!
         self.passDataToCategory(source: self.dataStore!, destination: &destinationDS)
         self.navigateToCategory(source: self.viewController!, destination: destinationVC)

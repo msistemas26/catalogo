@@ -20,6 +20,8 @@ class CategoryListViewController: UIViewController, CategoryListDisplayLogic
     @IBOutlet weak var tableView: UITableView!
     var displayedCategories: [CategoryList.FetchCategories.ViewModel.DisplayedCategory] = []
     
+    var completion: ((String) -> Void)!
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -88,6 +90,10 @@ class CategoryListViewController: UIViewController, CategoryListDisplayLogic
     @IBAction func closeCategoryButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    func selectedCategory(completion: @escaping (String) -> Void){
+        self.completion = completion
+    }
 }
 
 
@@ -122,7 +128,12 @@ extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        router?.showSelectedCategory(withCategoryIndex: indexPath.row)
+        let displayedCategory = displayedCategories[indexPath.section]
+        let childrenCategory = displayedCategory.children[indexPath.row]
+        
+        if let categotyId = childrenCategory.categoryId {
+            completion(categotyId)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -135,6 +146,7 @@ extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource
         headerView.setup(withTitle: displayedCategory.name ?? "Category")
         return headerView
     }
+    
 }
 
 // MARK: - Transition Delegates implementation

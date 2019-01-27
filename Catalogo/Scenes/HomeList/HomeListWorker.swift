@@ -12,10 +12,10 @@ class HomeListWorker
 {
     let theCatalogApi = TheCatalogApi()
     
-    func fetchProducts(storeId: Int?, completionHandler completion: @escaping ([Product]) -> Void)
+    func fetchProducts(storeId: Int?, categoryId: String?,  completionHandler completion: @escaping ([Product]) -> Void)
     {
         if let storeId = storeId {
-            theCatalogApi.fetchProducts(storeId: storeId){ (stores) in
+            theCatalogApi.fetchProducts(storeId: storeId, categoryId: categoryId){ (stores) in
                 completion(stores)
             }
         }

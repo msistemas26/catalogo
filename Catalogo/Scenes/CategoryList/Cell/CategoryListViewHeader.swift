@@ -29,8 +29,7 @@ class CategoryListViewHeader: UIView {
         addSubview(title)
         title.text = text
         
-        // This should go in a Palete file.
-        self.backgroundColor = UIColor.init(red: 60.0/255.0, green: 179.0/255.0, blue: 113.0/255.0, alpha: 1.0)
+        self.backgroundColor = DefaultColors.pinkColor
         
         title.translatesAutoresizingMaskIntoConstraints = false
         

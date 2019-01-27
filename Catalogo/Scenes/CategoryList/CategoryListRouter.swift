@@ -10,45 +10,44 @@ import UIKit
 
 protocol CategoryListRoutingLogic
 {
-    func showSelectedCategory(withCategoryIndex: Int)
+    func showSelectedCategory(withCategoryId: String)
 }
 
 protocol CategoryListDataPassing
 {
     var dataStore: CategoryListDataStore? { get set }
+    var selectedCategory: String? { get set }
 }
 
 class CategoryListRouter: NSObject, CategoryListRoutingLogic, CategoryListDataPassing
 {
     weak var viewController: CategoryListViewController?
     var dataStore: CategoryListDataStore?
+    var selectedCategory: String?
     
     // MARK: Routing
     
-    func showSelectedCategory(withCategoryIndex: Int)
+    func showSelectedCategory(withCategoryId: String)
     {
-        /*
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        var destinationDS = destinationVC.router!.dataStore!
-        passDataToConversation(source: dataStore!, destination: &destinationDS)
-        navigateToConversation(source: viewController!, destination: destinationVC)
-         */
+        self.selectedCategory = withCategoryId
+        if let parentController = viewController?.presentingViewController, let destinationVC = parentController as? HomeListViewController {
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToHome(source: dataStore!, destination: &destinationDS)
+            navigateToHome(source: viewController!, destination: destinationVC)
+        }
     }
     
-    /*
     // MARK: Navigation
     
-    func navigateToConversation(source: CategoryListViewController, destination: ViewController)
+    func navigateToHome(source: CategoryListViewController, destination: HomeListViewController)
     {
-        source.show(destination, sender: nil)
+        source.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Passing data
     
-    func passDataToConversation(source: CategoryListDataStore, destination: inout DataStore)
+    func passDataToHome(source: CategoryListDataStore, destination: inout HomeListDataStore)
     {
-        destination.value = ""
+        destination.categoryId = self.selectedCategory
     }
-    */
 }

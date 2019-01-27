@@ -18,6 +18,7 @@ protocol HomeListDataStore
     var fetchedProducts: [Product] { get set }
     var selectedProduct: Product? { get set }
     var storeId: Int? { get set }
+    var categoryId: String? { get set }
 }
 
 class HomeListInteractor: HomeListBusinessLogic, HomeListDataStore
@@ -27,13 +28,14 @@ class HomeListInteractor: HomeListBusinessLogic, HomeListDataStore
     var fetchedProducts: [Product] = []
     var selectedProduct: Product?
     var storeId: Int?
+    var categoryId: String?
     
     // MARK: Methods
     
     func fetchProducts(request: HomeList.FetchProducts.Request)
     {
-         worker = HomeListWorker()
-        worker?.fetchProducts(storeId: self.storeId){ (fetchedProducts) in
+        worker = HomeListWorker()
+        worker?.fetchProducts(storeId: self.storeId, categoryId: self.categoryId){ (fetchedProducts) in
             self.fetchedProducts = fetchedProducts
             let response = HomeList.FetchProducts.Response(fetchedProducts: fetchedProducts)
             self.presenter?.presentProducts(response: response)

@@ -51,6 +51,7 @@
 		9A7A9B5921F8A1C600ED6EBA /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B5021F8A1C600ED6EBA /* CategoryListCell.swift */; };
 		9A7A9B5A21F8A1C600ED6EBA /* CategoryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A9B5121F8A1C600ED6EBA /* CategoryListCell.xib */; };
 		9A7A9B5F21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9B5E21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift */; };
+		9A7A9C8421FE612D00ED6EBA /* Palete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A9C8321FE612D00ED6EBA /* Palete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		9A7A9B5021F8A1C600ED6EBA /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		9A7A9B5121F8A1C600ED6EBA /* CategoryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryListCell.xib; sourceTree = "<group>"; };
 		9A7A9B5E21F8A46000ED6EBA /* FadeUpToBottomTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeUpToBottomTransitionAnimation.swift; sourceTree = "<group>"; };
+		9A7A9C8321FE612D00ED6EBA /* Palete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				9A7A9B5D21F8A45400ED6EBA /* Transition */,
+				9A7A9C8321FE612D00ED6EBA /* Palete.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 			files = (
 				9A0A008521F373F500D8DEDD /* HomeListPresenter.swift in Sources */,
 				9A0A00A021F377AF00D8DEDD /* StoreListViewController.swift in Sources */,
+				9A7A9C8421FE612D00ED6EBA /* Palete.swift in Sources */,
 				9A0A008721F373F500D8DEDD /* HomeListRouter.swift in Sources */,
 				9A7A9B5621F8A1C600ED6EBA /* CategoryListModels.swift in Sources */,
 				9A0A00BB21F37DFE00D8DEDD /* TheCatalogApi.swift in Sources */,

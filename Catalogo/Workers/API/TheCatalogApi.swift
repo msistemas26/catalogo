@@ -60,10 +60,18 @@ final class TheCatalogApi
         }
     }
     
-    func fetchProducts(storeId: Int, completionHandler completion: @escaping ([Product]) -> Void)
+    func fetchProducts(storeId: Int, categoryId: String?, completionHandler completion: @escaping ([Product]) -> Void)
     {
-        let productsPath = CatalogPath.products.replacingOccurrences(of: "store_id", with: String(storeId))
+        
+        var productsPath = CatalogPath.products.replacingOccurrences(of: "store_id", with: String(storeId))
+        
+        if let category = categoryId {
+            productsPath.append("category_id=\(category)")
+            
+        }
         let urlString = CatalogPath.home_path + productsPath
+        print(urlString)
+        
         Alamofire
             .request(urlString, method: .get)
             .responseJSON { response in
@@ -100,7 +108,7 @@ final class TheCatalogApi
                         let name = categoryDict["name"] as? String
                         var children: [Category] = []
                         for child in categoryDict["children"] as! [[String: Any]] {
-                            children.append(Category(categoryId: child["name"] as? String, name: child["name"] as? String,children: []))
+                            children.append(Category(categoryId: child["categoryId"] as? String, name: child["name"] as? String,children: []))
                         }
                         categories.append(Category(categoryId: categoryId,name: name ,children: children))
                     }
