@@ -11,6 +11,7 @@ import UIKit
 protocol HomeListRoutingLogic
 {
     func routeToCategories()
+    func routeToDetails()
 }
 
 protocol HomeListDataPassing
@@ -58,5 +59,33 @@ class HomeListRouter: NSObject, HomeListRoutingLogic, HomeListDataPassing
     func passDataToCategory(source: HomeListDataStore, destination: inout CategoryListDataStore)
     {
         destination.storeId = source.storeId
+    }
+    
+    func routeToDetails()
+    {
+        //USING PROGRAMATICALLY PRESENTATION
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ProductDetailsViewController") as! ProductDetailsViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        self.passDataToDetails(source: self.dataStore!, destination: &destinationDS)
+        self.navigateToDetails(source: self.viewController!, destination: destinationVC)
+        
+    }
+    
+    // MARK: Navigation
+    
+    func navigateToDetails(source: HomeListViewController, destination: ProductDetailsViewController)
+    {
+        if let navigationController = source.navigationController {
+            navigationController.pushViewController(destination, animated: true)
+        }
+    }
+    
+    // MARK: Passing data
+    
+    func passDataToDetails(source: HomeListDataStore, destination: inout ProductDetailsDataStore)
+    {
+        destination.selectedProduct = source.selectedProduct
     }
 }

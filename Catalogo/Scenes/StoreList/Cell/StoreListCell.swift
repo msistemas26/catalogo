@@ -25,7 +25,7 @@ class StoreListCell: UITableViewCell {
     }
     
     private func setThemes() {
-        title.textColor = UIColor.black
+        title.textColor = UIColor.white
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

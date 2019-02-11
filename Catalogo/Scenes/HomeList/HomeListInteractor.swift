@@ -11,6 +11,7 @@ import UIKit
 protocol HomeListBusinessLogic
 {
     func fetchProducts(request: HomeList.FetchProducts.Request)
+    func selectProductWith(index: Int)
 }
 
 protocol HomeListDataStore
@@ -40,5 +41,9 @@ class HomeListInteractor: HomeListBusinessLogic, HomeListDataStore
             let response = HomeList.FetchProducts.Response(fetchedProducts: fetchedProducts)
             self.presenter?.presentProducts(response: response)
          }
+    }
+    
+    func selectProductWith(index: Int) {
+        self.selectedProduct = fetchedProducts[index]
     }
 }

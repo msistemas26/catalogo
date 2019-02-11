@@ -41,7 +41,7 @@ class StoreViewListViewController: UIViewController {
         alertTitle.text = "StoreView"
         dismissButton.setTitle("DISMISS", for: .normal)
         
-        dismissButton.backgroundColor = DefaultColors.pinkColor
+        dismissButton.backgroundColor = DefaultColors.greyColor
         backViewShadow()
         dismissButtonShadow()
     }
@@ -62,7 +62,7 @@ class StoreViewListViewController: UIViewController {
     func dismissButtonShadow(scale: Bool = true) {
         //dismissButton.imageView?.layer.cornerRadius = 7.0
         dismissButton.layer.shadowRadius = 1
-        dismissButton.layer.shadowColor = DefaultColors.pinkColor.cgColor
+        dismissButton.layer.shadowColor = DefaultColors.greyColor.cgColor
         dismissButton.layer.shadowOffset = CGSize(width: 0, height: 5.0)
         dismissButton.layer.shadowOpacity = 1
         dismissButton.layer.masksToBounds = false

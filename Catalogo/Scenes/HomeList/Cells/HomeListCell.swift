@@ -14,6 +14,7 @@ class HomeListCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var displayedProduct: HomeList.FetchProducts.ViewModel.DisplayedProduct!
     
@@ -25,8 +26,11 @@ class HomeListCell: UICollectionViewCell {
     
     private func showData() {
         name.text = displayedProduct.name
-        if let finalPrice = displayedProduct.finalPrice {
-            price.text = String(finalPrice)
+        if let description = displayedProduct.description {
+            descriptionLabel.text = description
+        }
+        if let finalPrice = displayedProduct.finalPrice, let currency = displayedProduct.currency{
+            price.text = "\(String(finalPrice)) \(currency)"
         }
         
         let placeholderImage = UIImage(named: "defaultImage")!
@@ -44,6 +48,6 @@ class HomeListCell: UICollectionViewCell {
     
     private func setThemes() {
         name.textColor = UIColor.black
-        price.textColor = UIColor.black
+        price.textColor = DefaultColors.greenColor
     }
 }

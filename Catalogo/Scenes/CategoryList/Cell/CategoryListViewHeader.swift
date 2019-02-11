@@ -29,7 +29,7 @@ class CategoryListViewHeader: UIView {
         addSubview(title)
         title.text = text
         
-        self.backgroundColor = DefaultColors.pinkColor
+        self.backgroundColor = DefaultColors.greyColor
         
         title.translatesAutoresizingMaskIntoConstraints = false
         

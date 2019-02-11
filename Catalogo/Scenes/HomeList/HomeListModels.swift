@@ -27,6 +27,9 @@ enum HomeList
                 var name: String?
                 let image: String?
                 let finalPrice: Int?
+                let currency: String?
+                let color: String?
+                let description: String?
             }
             var displayedProducts: [DisplayedProduct]
         }
